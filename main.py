@@ -40,6 +40,11 @@ def text_reply(msg):
     else:
         itchat.send('你是猪', msg['FromUserName'])
 
+# @itchat.msg_register(FRIENDS)
+# def add_friend(msg):
+#     msg.user.verify()
+#     msg.user.send('Nice to meet you!')
+
 # 获得群聊ID
 def group_id(name):
     df = itchat.search_chatrooms(name=name)
@@ -49,7 +54,7 @@ def group_id(name):
 @itchat.msg_register(itchat.content.TEXT, isGroupChat=True)
 def group_text_reply(msg):
     group_name = msg['User']['NickName']
-    group = ['吃饭', 'itchat','上海','小程序小分队','小程序开发']
+    group = ['吃饭', 'itchat','上海','小程序小分队',]
     igroup_info = itchat.search_chatrooms(name=name)
     print(igroup_info)
     item = group_info[0]['UserName']
